@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: Mooli, san-serif;
+    }
+
+img {
+	max-width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: 'Mooli', 'Arial', 'Helvetica', 'Sans-serif';
+    font-size: 1.2em;
+}
+
+a:link,
+a:visited {
+  color: var(--text-light);
+}
+
+.menu-btn {
+    background-color: #52489c;
+    color: var(--text-light);
+    font-size: 1.2em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav {
+    background-color: #52489c;
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav a {
+    padding: 40px;
+}
+
+header {
+    background-color: #52489c;
+    color: var(--text-light);
+}
+
+header h1 {
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+}
+
+footer {
+    background-color: #52489c;
+    color: var(--text-light);
+}
+
+@media screen and (min-width: 700px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+    }
+
+    nav a{
+        display: none;
+    }
+
+    .menu-btn {
+        text-align: center;  
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        display: grid;
+    }
+
+    nav a{
+        display: inline-block;
+    }
+
+    .menu-btn {
+        display: none;  
+    }
+}
