@@ -17,7 +17,7 @@ function handleResize() {
   const menu = document.querySelector("nav");
   if (window.innerWidth > 1000) {
     menu.classList.remove("hide");
-    menuLinks.forEach(link => link.classList.remove("show"));
+    menuLinks.forEach((link) => link.classList.remove("show"));
   } else {
     menu.classList.add("hide");
   }
@@ -30,7 +30,7 @@ const images = document.querySelectorAll(".gallery img");
 
 function viewerTemplate(pic, alt) {
   return `
-    <div class="viewer">
+    <div class="viewer" aria-modal="true" role='dialog'>
       <button class="close-viewer">X</button>
       <img class="modal-img" src="${pic}" alt="${alt}">
     </div>
@@ -40,9 +40,9 @@ function viewerTemplate(pic, alt) {
 function viewHandler(event) {
   const clickedImage = event.target;
   const src = clickedImage.src;
-  const fullSizePath = src.split("-sm")[0] + "-full.jpeg"; 
+  const fullSizePath = src.split("-sm")[0] + "-full.jpeg";
   const altText = clickedImage.alt;
-  
+
   const viewerHTML = viewerTemplate(fullSizePath, altText);
 
   document.body.insertAdjacentHTML("afterbegin", viewerHTML);
@@ -60,5 +60,21 @@ const gallery = document.querySelector(".gallery");
 gallery.addEventListener("click", function (event) {
   if (event.target.tagName.toLowerCase() === "img") {
     viewHandler(event);
+  }
+});
+
+window.addEventListener("click", function (event) {
+  let modal = document.querySelector(".viewer");
+  // close the modal when user clicks outside of the image
+  if (event.target === modal) {
+    modal.remove();
+  }
+});
+
+// allow the escape key to close the modal as well
+window.addEventListener("keydown", function (event) {
+  let modal = document.querySelector(".viewer");
+  if (event.key === "Escape") {
+    modal.remove();
   }
 });
