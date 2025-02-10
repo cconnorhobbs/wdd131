@@ -1,11 +1,82 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
 
-.img { 
-    grid-area: 2 / 2 / 3 / 3; 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    line-height: 1.6;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Lora', 'Impact', 'serif';
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    display: flex;
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #AF1B3F;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin: 10px;
+}
+
+main {
+    grid-area: main;
+    text-align: center;
+    margin-top: 40px;
+    position: relative; 
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #AF1B3F;
+    font-family: 'Lora', 'Impact', 'serif';
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+p2, p3, p4, p5 {
+    display: block;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.leftcorner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
 }
