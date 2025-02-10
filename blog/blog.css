@@ -80,3 +80,14 @@ p2, p3, p4, p5 {
     left: 20px;
     text-align: left;
 }
+
+.leftcorner-second {
+    position: absolute; 
+    left: 20px;
+    text-align: left;
+}
+
+.skiptocontent {
+    position: absolute;
+    top: -40000px;
+}
