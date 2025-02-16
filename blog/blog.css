@@ -76,7 +76,6 @@ p2, p3, p4, p5 {
 
 .leftcorner {
     position: absolute;
-    top: 20px;
     left: 20px;
     text-align: left;
 }
