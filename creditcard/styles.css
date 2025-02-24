@@ -1,0 +1,100 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#cardFront {
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 300px;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cardBack {
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.stripe {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    height: 50px; 
+    background-color: black;
+}
+
+button {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#cardNumberContainer,
+#cardHolderContainer,
+#expirationContainer,
+#cvcContainer {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#expirationFields {
+    display: flex;
+    gap: 10px;
+}
+
+#expMonth,
+#expYear {
+    width: 60px;
+}
+
+#cardNumberContainer {
+    grid-column: 1/2;
+}
+
+#cardHolderContainer {
+    grid-column: 1/2;
+    margin-top: 10px;
+}
+
+#expirationContainer {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#cvcContainer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80%;
+}
