@@ -1,7 +1,166 @@
-.social {
-    width: 0.6em;
-}
-
-img {
-	max-width: 100%;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+  }
+  
+  header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  header .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .search-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 300px;
+    margin-left: 20px;
+  }
+  
+  #search-bar {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .recipe {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .recipe-content {
+    padding: 20px;
+  }
+  
+  button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ff4500;
+  }
+  
+  footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .social a {
+    margin: 0 10px;
+  }
+  
+  .social img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .social a:hover {
+    opacity: 0.7;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    header h2 {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+  
+    header .logo img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .search-container {
+      max-width: 250px;
+      margin-top: 10px;
+    }
+  
+    .recipe {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .recipe-content {
+      padding: 10px;
+    }
+  
+    .social a {
+      margin: 0 5px;
+    }
+  
+    .recipe-image img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h2 {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  
+    .recipe {
+      width: 95%;
+    }
+  
+    .social img {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .search-container {
+      max-width: 200px;
+      margin-top: 10px;
+    }
+  }
+  

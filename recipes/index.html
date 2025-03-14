@@ -6,7 +6,6 @@
     <title>Recipes</title>
     <link href="recipes.css" rel="stylesheet" />
     <script defer src="recipes.js"></script>
-
   </head>
 
   <body>
@@ -15,6 +14,15 @@
         <img src="images/recipe-book.png" alt="logo" />
       </div>
       <h2>Recipebook</h2>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search for a recipe..."
+          oninput="filterRecipes()"
+        />
+      </div>
     </header>
 
     <main>

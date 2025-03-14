@@ -322,12 +322,28 @@ function ratingTemplate(rating) {
 function renderRecipes(recipeList) {
     let recipeContainer = document.querySelector('.recipe');
     let html = recipeTemplate(recipeList);
-    recipeContainer.innerHTML = html;  // Update the container with the new recipe
+    recipeContainer.innerHTML = html;  
 }
+
+function filterRecipes() {
+	const searchValue = document.getElementById("search-bar").value.toLowerCase();
+	const filteredRecipes = recipes.filter(recipe =>
+	  recipe.name.toLowerCase().includes(searchValue) ||
+	  recipe.tags.some(tag => tag.toLowerCase().includes(searchValue))
+	);
+  
+	if (filteredRecipes.length > 0) {
+	  renderRecipes(filteredRecipes[0]); 
+	} else {
+	  renderRecipes([]); 
+	}
+  }
 
 function init() {
     const recipe = getRandomRecipe(recipes);
-    renderRecipes(recipe);  // Render the randomly selected recipe
+    renderRecipes(recipe);  
 }
 
 init();
+
+
