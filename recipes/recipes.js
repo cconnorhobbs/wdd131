@@ -345,5 +345,3 @@ function init() {
 }
 
 init();
-
-
