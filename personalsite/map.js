@@ -1,21 +1,32 @@
-var map = L.map('map').setView([43.825, -111.793], 13);
+document.addEventListener('DOMContentLoaded', function() {
+    var map = L.map('map').setView([43.825, -111.793], 13);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+    // Tile Layer for OpenStreetMap
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-var marker = L.marker([43.81961213605789, -111.78608555070839]).addTo(map);
+    // Court locations as an array of objects
+    const pickleballCourts = [
+        { lat: 43.819612, lon: -111.786085, title: "Court 1" },
+        { lat: 43.818611, lon: -111.785511, title: "Court 2" },
+        { lat: 43.819422, lon: -111.787044, title: "Court 3" },
+        { lat: 43.822336, lon: -111.791036, title: "Court 4" },
+        { lat: 43.832960, lon: -111.801260, title: "Court 5" },
+        { lat: 43.826720, lon: -111.774565, title: "Court 6" },
+        { lat: 43.830920, lon: -111.771332, title: "Court 7" }
+    ];
 
-var marker = L.marker([43.81861184137616, -111.78551175111855]).addTo(map);
+    // Add markers dynamically based on the array
+    pickleballCourts.forEach(function(court) {
+        L.marker([court.lat, court.lon])
+            .addTo(map)
+            .bindPopup(`<b>${court.title}</b><br>Pickleball Court`);
+    });
 
-var marker = L.marker([43.819422687186524, -111.78704451374344]).addTo(map);
-
-var marker = L.marker([43.822336610891256, -111.79103634565419]).addTo(map);
-
-var marker = L.marker([43.832960116396805, -111.8012603297652]).addTo(map);
-
-var marker = L.marker([43.826720424137186, -111.7745654591547]).addTo(map);
-
-var marker = L.marker([43.83092093904061, -111.77133229580086]).addTo(map);
-
+    // Conditional branching example: Change map view based on device width
+    if (window.innerWidth < 768) {
+        map.setView([43.825, -111.793], 12); // Zoom out on small screens
+    }
+});
