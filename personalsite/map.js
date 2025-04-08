@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     var map = L.map('map').setView([43.825, -111.793], 13);
 
-    // Tile Layer for OpenStreetMap
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Court locations as an array of objects
     const pickleballCourts = [
         { lat: 43.819612, lon: -111.786085, title: "Court 1" },
         { lat: 43.818611, lon: -111.785511, title: "Court 2" },
@@ -18,15 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
         { lat: 43.830920, lon: -111.771332, title: "Court 7" }
     ];
 
-    // Add markers dynamically based on the array
     pickleballCourts.forEach(function(court) {
         L.marker([court.lat, court.lon])
             .addTo(map)
             .bindPopup(`<b>${court.title}</b><br>Pickleball Court`);
     });
 
-    // Conditional branching example: Change map view based on device width
     if (window.innerWidth < 768) {
-        map.setView([43.825, -111.793], 12); // Zoom out on small screens
+        map.setView([43.825, -111.793], 12); 
     }
 });
